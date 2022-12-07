@@ -6,7 +6,7 @@ This app will be a comprehensive list of plant medicines. The home page will be 
 
 ## Link to Planning Trello Board
 
-##Technologies Used
+## Technologies Used
 
 -Express
 -Node
