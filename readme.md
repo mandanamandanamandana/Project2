@@ -6,6 +6,16 @@ This app will be a comprehensive list of plant medicines. The home page will be 
 
 ## Link to Planning Trello Board
 
+##Technologies Used
+
+-Express
+-Node
+-EJS
+-HTML
+-CSS
+-MongoDB
 
 
-![Trello Board](https://trello.com/b/DrqXgVA3/psychedelic-crud)(https://trello.com/b/DrqXgVA3/psychedelic-crud))
+
+
+![ Trello Board ](https://trello.com/b/DrqXgVA3/psychedelic-crud)(https://trello.com/b/DrqXgVA3/psychedelic-crud))
