@@ -1,2 +1,11 @@
-<%-  include("./partials/head.ejs") 
+<%-  include("./partials/head.ejs") %>
+
+<ul>
+   <% Psychedelics.forEach((psychdelic, index) => { %>
+       
+      <a href="<%= index %>"></a><li><%= psychdelic.name %></li>
+
+<% }) %>
+
+</ul>
 

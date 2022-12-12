@@ -8,7 +8,10 @@ const Psychdelics = {
     },
     getOne: function(index){
         return this.data[index]
+    },
+    create: function(newSoda){
+        this.data.push(newSoda)
     }
 }
 
-module.exports = Psychdelics
+module.exports = Psychdelics 

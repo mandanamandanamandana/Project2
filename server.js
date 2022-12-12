@@ -27,7 +27,7 @@ app.use(morgan("dev"));
 app.use("/static", express.static("public"));
 app.use("/psychedelics", PsychedelicRouter)
 app.use(express.urlencoded({extended: true}));
-app.use(methodOverride("_method"));
+app.use(methodOverride("_method")); 
 //---------
 //Routes
 //--------
