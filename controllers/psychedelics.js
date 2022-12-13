@@ -10,8 +10,9 @@ const router = express.Router()
 
 // INDEX GET /psychedelics =-> get a list of psychedelics
 
+
 router.get("/", (req, res) => {
-    res.render("main.ejs", {
+    res.render("index.ejs", {
         psychdelics: Psychdelics.getAll()
     })
 })
@@ -22,9 +23,17 @@ router.get("/new", (req, res) => {
 })
 //Create Route POST /psychedelics - create a new soda. redirect back to index page
 router.post("/", (req, res) => {
-    
+    Psychedelics.create(req.body)
+    res.redirect("/psychedelics")
 })
 
+// EDIT Route get /psychedelics/:id/edit
+router.get("/:id/edit", (req, res) => {
+    res.render("edit.ejs", {
+        psychedelic:Psychedelics.getOne(req.params.id),
+        index: req.params.id
+    }) 
+}) 
 // SHOW ROUTE /psychedelucs/:id -> page of individual psychedelic
 
 router.get("/:id", (req, res) => {
@@ -33,8 +42,8 @@ router.get("/:id", (req, res) => {
     })
 })
  
-Router.get("/", (req, res) => {
-    res.send("You hit the psychedelics router")
-})
+// Router.get("/", (req, res) => {
+//     res.send("You hit the psychedelics router")
+// })
 
 module.exports = router  

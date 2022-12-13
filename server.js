@@ -5,7 +5,7 @@ const express = require("express"); //backend framework
 const morgan = require("morgan")//logger (everytime a request comes into the server it will log details of the request)
 const methodOverride = require("method-override")
 const mongoose = require("mongoose")
-const PsychdelicsRouter = require("./controllers/psychdelics")
+const PsychdelicsRouter = require("./controllers/psychedelics")
 
 //Global Variables
 
@@ -14,7 +14,7 @@ const PsychdelicsRouter = require("./controllers/psychdelics")
 const app = express(); 
 
 // establish mongo connection
-mongoose.connect(process.env.MONGO)
+mongoose.connect(process.env.DATABASE_URL)
 
 //Mongoose connection events
 mongoose.connection
@@ -25,9 +25,9 @@ mongoose.connection
 //Register the middleware
 app.use(morgan("dev"));
 app.use("/static", express.static("public"));
-app.use("/psychedelics", PsychedelicRouter)
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method")); 
+app.use("/psychedelics", PsychdelicsRouter)
 //---------
 //Routes
 //--------
