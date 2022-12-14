@@ -34,6 +34,10 @@ router.get("/:id/edit", (req, res) => {
         index: req.params.id
     }) 
 }) 
+
+//Update route put /:id/edit
+
+
 // SHOW ROUTE /psychedelucs/:id -> page of individual psychedelic
 
 router.get("/:id", (req, res) => {
