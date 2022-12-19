@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include("partials/head.ejs") %>
+
+   <body>
+      <%- include("partials/header.ejs") %>
+
+
+      <main>
+         <div>
+          <a href="/psychedelics/new"><button>Create New</button></a>
+          <% for (psychedelic of psychedelics) { %>   
+           <article>
+             <h2><%= psychedelic.name %></h2>
+             <h3><%= psychedelic.benefits %></h3>
+             <a href="/psychedelics/<%= psychedelic._id %>/edit"><button>Edit</button></a>
+             <form action="/psychedelic/<%= fruit._id %>?_method=DELETE" method="POST">
+               <input type="submit" value="Delete"/>
+             </form>
+             <a href="/psychedelics/"><button>Back to Home Page</button></a>
+           </article>
+   
+         </div>
+       </main>
+   </body>
+</html>
+
+
+
+
+
+
+<
+
+
+

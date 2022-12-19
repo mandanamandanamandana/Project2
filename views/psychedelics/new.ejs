@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head.ejs") %>
+
+     <body>
+        <%- include("../partials/header.ejs") %>
+
+
+
+    <main>
+        <div>
+
+         <form action="/psychedelics" method="POST">
+            <fieldset>
+                <legend>Create a New Plant Medicine</legend>
+                <label>
+                    NAME: <input type="text" name="name" placeholder="enter name here" />
+                </label>
+                <label>
+                    EFFECTS: <input type="text" name="effects" placeholder="enter effects here" />
+                </label>
+                <label>
+                    BENEFITS: <input type="text" name="benefits" placeholder="enter benefits here" />
+                </label>
+                <label>
+                    DANGERS: <input type="text" name="Dangers" placeholder="enter Dangers here" />
+                </label>
+                <label>
+                    ANECDOTES: <input type="text" name="Anecdotes" placeholder="enter Anecdotes here" />
+                </label>
+                <label>
+                    IMAGE: <input type="image" name="Image" placeholder="enter Image here" />
+                </label>
+            </fieldset>
+            <input type ="submit" value="Create New Plant Medicine" />
+        
+        </form> 
+    </div>
+    </main>
+    
+</body>

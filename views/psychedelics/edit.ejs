@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../partials/head.ejs") %>
+
+<body>
+    <%- include("../partials/header.ejs") %>
+
+    <main>
+        <div>
+            <form action="/psychedelics/<%= psychedelic._id %>?_method=PUT" method="post" >
+
+                <fieldset>
+                    <legend> <%= Edit a psychedelic.name %></legend>
+                    <label>
+                        NAME: <input 
+                        type="text" 
+                        name="name" 
+                        value="<%= psychedelic.name %>"
+                        placeholder="enter name here"
+                        />
+                    </label>
+                    <label>
+                        EFFECTS: <input 
+                        type="text" 
+                        name="effects" 
+                        value="<%= psychedelic.effects %>"
+                        placeholder="enter effects here" 
+                        />
+                    </label>
+                    <label>
+                        BENEFITS: <input 
+                        type="text" 
+                        name="benefits" 
+                        value="<%= psychedelic.benefits %>"
+                        placeholder="enter benefits here" 
+                        />
+                    </label>
+                    <label>
+                        DANGERS: <input 
+                        type="text" 
+                        name="Dangers" 
+                        value="<%= psychedelic.dangers %>"
+                        placeholder="enter Dangers here" 
+                        />
+                    </label>
+                    <label>
+                        ANECDOTES: <input 
+                        type="text" 
+                        name="Anecdotes" 
+                        value="<%= psychedelic.anecdotes %>"
+                        placeholder="enter Anecdotes here" 
+                        />
+                    </label>
+                    <label>
+                        IMAGE: <input  
+                        type="image" 
+                        name="Image" 
+                        value="<%= psychedelic.image %>"
+                        placeholder="enter Image here" 
+                        />
+                    </label>
+                </fieldset>
+                <input type ="submit" value="Update <% psychedelic.name %>" />
+            
+            </form> 
+        </div>
+        </main>
+        
+    </body>
+
+
+            
+
+        </div>
+    </main>
+</body>
+
+
+
+<h1>Form to Edit a <%= psychedelic.name %></h1>
+
+<form action="/psychedelics/?_method=PUT" <%= index %>" method="post">
+    <input type="text" name="name" placeholder="enter name here" value="<%= psychedelic.name %>">
+    <input type="text" name="effects" placeholder="enter effects here">
+    <input type="text" name="benefits" placeholder="enter benefits here">
+    <input type="submit" value="Update psychedelic">
+</form>  
+
+</html>

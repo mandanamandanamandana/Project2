@@ -1,0 +1,10 @@
+<%- include("partials/head.ejs") %>
+
+<h1><%= psychedelic.name %></h1>
+<h3><%= psychedelic.effects %></h3>
+<h3><%= psychedelic.benefits %></h3>
+<a href="/psychedelics/<%= fruit._id %>/edit"></a><button>Edit</button></a>
+<form action="/psychedelics/<%= psychedelic._id %>?_method=DELETE" method="POST"> 
+    <input type="submit" value="Delete" />
+</form>
+<a href="/psychedelics/">Back to list of plant Medicines</a>
