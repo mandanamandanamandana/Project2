@@ -19,6 +19,7 @@ function errorHandler(error, res){
 
 router.get("/", (req, res) => {
      Psychedelics.find({}, (err, psychedelics) => {
+        console.log(psychedelics)
         res.render("psychedelics/index.ejs", {psychedelics}
         )
     })
@@ -31,7 +32,7 @@ router.get("/new", (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    Psychedelic.create(req.body, (err, createdPsychedelic) => {
+    Psychedelics.create(req.body, (err, createdPsychedelic) => {
         console.log(createdPsychedelic, err)
         res.redirect('/psychedelics')
     })
@@ -55,8 +56,8 @@ router.post('/', (req, res) => {
 router.get("/:id/edit", (req, res) => {
 
     const id = req.params.id
-    Psychedelic.findById(id, (err, foundPsychedelic) => {
-        res.render("psychedelics/edit.ejs", { psychedelic: foundPsychedelic })
+    Psychedelics.findById(id, (err, psychedelic) => {
+        res.render("psychedelics/edit.ejs", {psychedelic})
     }) 
 }) 
 
@@ -67,7 +68,7 @@ router.get("/:id/edit", (req, res) => {
 router.get("/:id", (req, res) => {
     psychedelic.findById(req.params.id)
     .then((psychedelic)=> { 
-        res.render("show.ejs", {psychedelic} 
+        res.render("psychedelics/show.ejs", {psychedelic} 
     )}
 )})
  
