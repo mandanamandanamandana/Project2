@@ -1,12 +1,14 @@
 // Dependencies
 
+
+
 require("dotenv").config();
 const express = require("express"); //backend framework
 const morgan = require("morgan")//logger (everytime a request comes into the server it will log details of the request)
 const methodOverride = require("method-override")
 const mongoose = require("mongoose")
 const PsychedelicsRouter = require("./controllers/psychedelics")
-
+const Psychedelic = require("./models/psychedelics")
 //Global Variables
 
 //Create Application Object
@@ -20,6 +22,7 @@ const CONFIG = {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }
+
 
 mongoose.connect(DATABASE_URL, CONFIG)
 //Mongoose connection events
@@ -95,7 +98,7 @@ app.get("/psychedelics/seed", (req, res) => {
 //         .catch(err => console.log(err))
 //   })
 
-// app.use("/psychedelics", PsychedelicsRouter)
+app.use("/psychedelics", PsychedelicsRouter)
 
 //Create server listener
 
