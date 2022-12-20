@@ -32,6 +32,7 @@ router.get("/new", (req, res) => {
 })
 
 router.post('/', (req, res) => {
+    console.log(req.body)
     Psychedelics.create(req.body, (err, createdPsychedelic) => {
         console.log(createdPsychedelic, err)
         res.redirect('/psychedelics')
@@ -39,7 +40,15 @@ router.post('/', (req, res) => {
 })
 //DESTROY ROUTE - Delete - Delete one psychedlic
 
+router.delete('/:id', (req, res) => {
 
+    Psychedelics.findByIdAndDelete(req.params.id, (err, deletedPsychedelic) => {
+        console.log(err, deletedPsychedelic)
+        res.redirect('/psychedelics') 
+
+
+    }) 
+})
 //Update route put /:id/edit
 // router.put("/:id", (req, res) => {
 //     res.json(req.body)
@@ -61,12 +70,19 @@ router.get("/:id/edit", (req, res) => {
     }) 
 }) 
 
+router.put('/:id', (req, res) => {
+    console.log(req.params.id)
+     Psychedelics.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedPsychedelic) => {
+        res.redirect(`/psychedelics/${req.params.id}`)
+     })
+
+})
 // route.put()
 
 // SHOW ROUTE /psychedelucs/:id -> page of individual psychedelic
 
 router.get("/:id", (req, res) => {
-    psychedelic.findById(req.params.id)
+    Psychedelics.findById(req.params.id)
     .then((psychedelic)=> { 
         res.render("psychedelics/show.ejs", {psychedelic} 
     )}

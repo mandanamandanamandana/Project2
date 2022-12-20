@@ -8,10 +8,14 @@ const psychedelicSchema = new mongoose.Schema({
     benefits: String,
     effects: String,
     dangers: String, 
-    anecdotes: String,
-    image: String
+    anecdotes: String
 })
 
+// psychedelicSchema.add({
+//     dangers: String, 
+//     anecdotes: String,
+//     image: String
+// })
 //Psychedelic model 
 
 const Psychedelic = mongoose.model("Psychedelic", psychedelicSchema)
