@@ -11,7 +11,10 @@
           <a href="/psychedelics/new"><button>Create New</button></a>
           <% for (psychedelic of psychedelics) { %>   
            <article>
-             <h2><%= psychedelic.name %></h2>
+            <a href="/psychedelics/<%= psychedelic._id %>">
+             <h2>
+              <%= psychedelic.name %>
+            </h2>
              <h3> Benefits: <%= psychedelic.benefits %></h3>
              <h3> Effects: <%= psychedelic.effects %></h3>
              <h3><%= psychedelic.dangers %></h3>
