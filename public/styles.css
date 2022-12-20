@@ -1,3 +1,57 @@
-h1 {
-    color: aqua
+.title-container{
+    background: black;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    padding-top: 1.25rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+}
+
+.add-btn-box{
+    background: black;
+    width: 100vw;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+}
+.add-btn{
+    margin:auto;
+    background:#F2ACB9 ;
+    border: solid 1px #F2ACB9;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.delete-btn{
+    
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(214,178,211,1) 22%, rgba(126,126,244,1) 90%, rgba(148,187,233,1) 99%);
+}
+
+h2, h3 {
+    color: black;
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+}
+
+.edit-btn{
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+
+.content{
+    padding: 1rem;
 }

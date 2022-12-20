@@ -7,23 +7,29 @@
 
 
       <main>
-         <div>
-          <a href="/psychedelics/new"><button>Create New</button></a>
+         <div class="main">
+          <div class="add-btn-box">
+          <a href="/psychedelics/new"><button class='add-btn'>Create New</button></a>
+          </div>
           <% for (psychedelic of psychedelics) { %>   
            <article>
             <a href="/psychedelics/<%= psychedelic._id %>">
+              <div class="content">
              <h2>
               <%= psychedelic.name %>
             </h2>
              <h3> Benefits: <%= psychedelic.benefits %></h3>
              <h3> Effects: <%= psychedelic.effects %></h3>
-             <h3><%= psychedelic.dangers %></h3>
-             <h3><%= psychedelic.anecdotes %></h3>
-             <a href="/psychedelics/<%= psychedelic._id %>/edit"><button>Edit</button></a>
+             <h3> Dangers: <%= psychedelic.dangers %></h3>
+             <h3> Anecdotes: <%= psychedelic.anecdotes %></h3>
+            </div>
+             <div class="btns">
+             <a href="/psychedelics/<%= psychedelic._id %>/edit"><button class="edit-btn">Edit</button></a>
              <form action="/psychedelics/<%= psychedelic._id %>?_method=DELETE" method="POST">
                <input type="submit" value="Delete"/>
              </form>
-             <a href="/psychedelics/"><button>Back to Home Page</button></a>
+             </div>>
+             <a href="/psychedelics/"><button>Back to Home Page</button class="add-btn"></a>
            </article>
            <% } %>
    
